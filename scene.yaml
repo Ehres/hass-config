@@ -1,0 +1,27 @@
+- name: Film
+  icon: mdi:movie
+  entities:
+    light.living_room_spots: off
+    light.hall: off
+    light.dining_room: off
+    light.cellar: off
+    light.kitchen: off
+    light.bar: off 
+    light.floor_lamp:
+      state: on
+      brightness: 100
+    cover.kitchen: closed
+    cover.bar: closed
+    cover.dining_room: closed
+    cover.living_room: closed
+
+- name: On mange
+  icon: mdi:silverware
+  entities: 
+    light.living_room_spots: off
+    light.hall: off
+    light.dining_room: on
+    light.kitchen: off
+    light.cellar: off
+    light.bar: off
+    light.floor_lamp: off

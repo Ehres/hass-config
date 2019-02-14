@@ -1,0 +1,25 @@
+flash_living_room:
+  alias: Flash salon on
+  sequence:
+    - alias: Lumière salon On
+      service: light.turn_on
+      data:
+        entity_id: group.lights
+    - delay: 00:00:01
+    - alias: Light Room1 Off
+      service: light.turn_off
+      data:
+        entity_id: group.lights
+    - alias: loop_room1
+      service: script.turn_on
+      data:
+        entity_id: script.flash_loop
+
+flash_loop:
+  alias: Flash loop
+  sequence:
+    - delay: 00:00:01
+    - alias: loop_room1
+      service: script.turn_on
+      data:
+        entity_id: script.flash_living_room

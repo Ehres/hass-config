@@ -1,0 +1,3 @@
+device_tracker.iphone_de_maxime:
+  friendly_name: iPhone de Maxime
+  entity_picture: ./pictures/maxime.jpg

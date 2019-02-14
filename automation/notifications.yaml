@@ -1,0 +1,34 @@
+- alias: 'Notify start'
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    service: notify.system_group
+    data:
+      message: "Home Assistant est en train de démarrer"
+
+- alias: 'Notification de mise à jours'
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    service: notify.system_group
+    data_template: 
+      title: 'Mise a jours de Home Assistant'
+      message: "La version {{ states.updater.updater.state }} de Home Assistant est disponible."
+
+- alias: 'Notification de detection de fumee'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_smoke_sensor
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.upstair_smoke_sensor
+      from: 'off'
+      to: 'on'
+  action:
+    service: notify.home_group
+    data_template:
+      title: 'Detection de fumee'
+      # message: "le detecteur {{ binary_sensor.downstair_smoke_sensor }} ."

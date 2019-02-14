@@ -1,0 +1,19 @@
+zwave.living_room:
+  polling_intensity: 1
+zwave.bedroom:
+  polling_intensity: 1
+light.living_room:
+  ignored: false
+  polling_intensity: 1
+sensor.living_room_power:
+  ignored: false
+  polling_intensity: 1
+light.bedroom:
+  ignored: false
+  polling_intensity: 1
+zwave.cellar:
+  ignored: false
+  polling_intensity: 1
+binary_sensor.kitchen_window_sensor_new:
+  ignored: false
+  polling_intensity: 10000

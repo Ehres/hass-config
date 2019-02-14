@@ -1,0 +1,17 @@
+alexa:
+  filter:
+    include_entities:
+      - light.cellar
+      - light.kitchen
+      - light.dining_room
+      - light.living_room_spots
+      - light.stairs
+      - light.hall
+      - light.bedroom
+      - sensor.mano_mano
+      - sensor.hopital_bichat
+      - binary_sensor.downstair_smoke_sensor
+      - binary_sensor.upstair_smoke_sensor
+      - sensor.downstair_smoke_sensor_temperature
+      - sensor.upstair_smoke_sensor_temperature
+      - scene.film

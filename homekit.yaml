@@ -1,0 +1,37 @@
+auto_start: False
+filter:
+  include_entities:
+    - light.cellar
+    - light.kitchen
+    - light.dining_room
+    - light.living_room_spots
+    - light.stairs
+    - light.hall
+    - light.bedroom
+    - light.bar
+    - light.louis_bedroom
+    - light.mezzanine
+    - light.floor_lamp
+    - input_boolean.maxime_home_presence
+    - input_boolean.fleur_home_presence
+    - binary_sensor.hall_smoke_sensor
+    - binary_sensor.upstair_smoke_sensor
+    - sensor.hall_smoke_sensor_temperature
+    - sensor.upstair_smoke_sensor_temperature
+    - sensor.cellar_motion_sensor_temperature
+    - sensor.cellar_motion_sensor_luminance
+    - scene.film
+    - scene.on_mange
+    - alarm_control_panel.alarme_maison
+    - cover.kitchen
+    - cover.bar
+    - cover.dining_room
+    - cover.living_room
+    - cover.mezzanine
+    - cover.bedroom
+    - cover.louis_bedroom
+entity_config:
+  alarm_control_panel.alarme_maison:
+    name: Alarme
+    code: !secret alarme_maison
+

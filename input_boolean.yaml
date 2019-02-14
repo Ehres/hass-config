@@ -1,0 +1,9 @@
+maxime_home_presence:
+  name: Maxime est ?|  la maison
+  initial: off
+  icon: mdi:human-male
+fleur_home_presence:
+  name: Fleur est ?|  la maison
+  initial: off
+  icon: mdi:human-female
+

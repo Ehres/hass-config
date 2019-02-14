@@ -1,0 +1,10 @@
+- name: system_group
+  platform: group
+  services:
+    - service: ios_iphone_de_maxime
+
+- name: home_group
+  platform: group
+  services:
+    - service: ios_iphone_de_maxime
+    - service: ios_iphone_de_fleur

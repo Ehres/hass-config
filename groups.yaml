@@ -1,0 +1,41 @@
+lights:
+  entities:
+    - light.living_room_spots
+    - light.dining_room
+    - light.stairs
+    - light.hall
+    - light.bar
+    - light.kitchen
+    - light.cellar
+    - light.louis_bedroom
+    - light.bedroom
+    - light.mezzanine
+
+covers:
+  view: no
+  name: Volets
+  entities:
+    - cover.kitchen
+    - cover.bar
+    - cover.dining_room
+    - cover.living_room
+    - cover.mezzanine
+    - cover.bedroom
+    - cover.louis_bedroom
+
+downstair_covers:
+  view: no
+  name: Volets du rez de chaussez
+  entities:
+    - cover.kitchen
+    - cover.bar
+    - cover.dining_room
+    - cover.living_room
+
+upstair_covers:
+  view: no
+  name: Volets de l'etage
+  entities:
+    - cover.bedroom
+    - cover.mezzanine
+    - cover.louis_bedroom
