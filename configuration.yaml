@@ -110,4 +110,4 @@ input_boolean: !include input_boolean.yaml
 
 alarm_control_panel: !include alarm_control_panel.yaml
 
-binary_sensor:
+binary_sensor: !include binary_sensor.yaml

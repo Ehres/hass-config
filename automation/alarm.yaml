@@ -1,31 +1,32 @@
-- alias: 'Trigger alarm while armed away'
+- alias: Trigger alarm while armed away
   trigger:
-    #- platform: state
-    #  entity_id: sensor.pir1
-    #  to: 'active'
-    #- platform: state
-    #  entity_id: sensor.pir2
-    #  to: 'active'
-    #- platform: state
-    #  entity_id: sensor.door
-    #  to: 'open'
-    #- platform: state
-    #  entity_id: sensor.window
-    #  to: 'open'
+    - platform: state
+      entity_id: group.opening_window_doors_sensors
+      to: 'on'
+    - platform: state
+      entity_id: group.opening_window_doors_burglar
+      to: 'on'
   condition:
     - condition: state
-      entity_id: alarm_control_panel.ha_alarm
+      entity_id: alarm_control_panel.house_alarm
       state: armed_away
   action:
     service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.ha_alarm
+    entity_id: alarm_control_panel.house_alarm
 
-- alias: 'Send notification when alarm triggered'
+- alias: Send notification when alarm triggered
   trigger:
-    - platform: state
-      entity_id: alarm_control_panel.ha_alarm
-      to: 'triggered'
+    platform: state
+    entity_id: alarm_control_panel.house_alarm
+    to: 'triggered'
   action:
     - service: notify.system_group
       data:
         message: "ALARM! The alarm has been triggered"
+    - service: light.turn_on
+      data:
+        brightness: 250
+        entity_id: group.lights 
+
+    - service: cover.open_cover
+      entity_id: group.covers

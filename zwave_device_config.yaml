@@ -14,6 +14,6 @@ light.bedroom:
 zwave.cellar:
   ignored: false
   polling_intensity: 1
-binary_sensor.kitchen_window_sensor_new:
+binary_sensor.enter_door_sensor:
   ignored: false
-  polling_intensity: 10000
+  polling_intensity: 30

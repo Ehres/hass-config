@@ -15,7 +15,6 @@
   excl_filter: A14
 
 - platform: systemmonitor
-  name: hass_monitor  
   resources:
     - type: disk_use_percent
       arg: /

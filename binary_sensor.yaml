@@ -1,0 +1,32 @@
+- platform: template
+  sensors: 
+    hall_door_sensor:
+      friendly_name: "Porte"
+      device_class: door
+      value_template: "{{ is_state('sensor.enter_door_sensor_access_control', '23') }}"
+    living_room_window_sensor:
+      friendly_name: "Baie coulissante"
+      device_class: door
+      value_template: "{{ is_state('sensor.living_room_window_opening_sensor_access_control', '22') }}"
+    dining_room_window_opening_sensor:
+      friendly_name: "Baie coulissante"
+      device_class: door
+      value_template: "{{ is_state('sensor.dining_room_window_opening_sensor_access_control', '22') }}"
+    
+    hall_door_sensor_burglar:
+      friendly_name: "Arrachement"
+      device_class: safety
+      value_template: "{{ is_state('sensor.hall_door_sensor_burglar', '3') }}"
+    living_room_window_opening_burglar:
+      friendly_name: "Arrachement"
+      device_class: safety
+      value_template: "{{ is_state('sensor.living_room_window_opening_sensor_burglar', '3') }}"
+    dining_room_window_opening_burglar:
+      friendly_name: "Arrachement"
+      device_class: safety
+      value_template: "{{ is_state('sensor.dining_room_window_opening_sensor_burglar', '3') }}"
+    cellar_motion_sensor_burglar:
+      friendly_name: "Arrachement"
+      device_class: safety
+      value_template: "{{ is_state('sensor.cellar_motion_sensor_burglar', '3') }}"
+

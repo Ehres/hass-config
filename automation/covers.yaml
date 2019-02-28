@@ -2,15 +2,14 @@
   trigger:
     platform: sun
     event: sunset
-    offset: '+01:00:00'
   action:
     service: cover.close_cover
     entity_id: group.covers
 
 - alias: Ouverture auto des volets
   trigger:
-    platform: time
-    at: '09:00:00'
+    platform: sun
+    event: sunrise
   action:
     service: cover.open_cover
     entity_id: group.downstair_covers 

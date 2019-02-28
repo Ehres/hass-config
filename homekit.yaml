@@ -22,7 +22,7 @@ filter:
     - sensor.cellar_motion_sensor_luminance
     - scene.film
     - scene.on_mange
-    - alarm_control_panel.alarme_maison
+    - alarm_control_panel.house_alarm
     - cover.kitchen
     - cover.bar
     - cover.dining_room
@@ -31,7 +31,7 @@ filter:
     - cover.bedroom
     - cover.louis_bedroom
 entity_config:
-  alarm_control_panel.alarme_maison:
+  alarm_control_panel.house_alarm:
     name: Alarme
-    code: !secret alarme_maison
+    code: !secret house_alarm_code
 

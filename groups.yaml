@@ -1,4 +1,6 @@
 lights:
+  view: no
+  name: Lumières
   entities:
     - light.living_room_spots
     - light.dining_room
@@ -10,6 +12,7 @@ lights:
     - light.louis_bedroom
     - light.bedroom
     - light.mezzanine
+    - light.floor_lamp
 
 covers:
   view: no
@@ -39,3 +42,22 @@ upstair_covers:
     - cover.bedroom
     - cover.mezzanine
     - cover.louis_bedroom
+
+opening_window_doors_sensors:
+  view: no
+  name: Détecteurs d'ouverture
+  entities:
+    - binary_sensor.hall_door_sensor
+    - binary_sensor.living_room_window_sensor
+    - binary_sensor.cellar_motion_sensor_sensor
+    - binary_sensor.dining_room_window_opening_sensor
+
+opening_window_doors_burglar:
+  view: no
+  name: Arrachement
+  entities:
+    - binary_sensor.hall_door_sensor_burglar
+    - binary_sensor.living_room_window_opening_burglar 
+    - binary_sensor.cellar_motion_sensor_burglar
+    - binary_sensor.dining_room_window_opening_burglar 
+
