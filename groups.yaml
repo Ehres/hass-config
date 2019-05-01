@@ -49,15 +49,18 @@ opening_window_doors_sensors:
   entities:
     - binary_sensor.hall_door_sensor
     - binary_sensor.living_room_window_sensor
-    - binary_sensor.cellar_motion_sensor_sensor
     - binary_sensor.dining_room_window_opening_sensor
+    - binary_sensor.bar_window_opening_sensor
+    - binary_sensor.kitchen_window_opening_sensor
 
 opening_window_doors_burglar:
   view: no
   name: Arrachement
   entities:
     - binary_sensor.hall_door_sensor_burglar
-    - binary_sensor.living_room_window_opening_burglar 
+    - binary_sensor.living_room_window_opening_burglar
     - binary_sensor.cellar_motion_sensor_burglar
-    - binary_sensor.dining_room_window_opening_burglar 
+    - binary_sensor.dining_room_window_opening_burglar
+    - binary_sensor.bar_window_opening_sensor_burglar
+    - binary_sensor.kitchen_window_opening_sensor_burglar
 

@@ -1,0 +1,7 @@
+{
+    "domain": "rfplayer",
+    "name": "RF Player Load Platform",
+    "dependencies": [],
+    "codeowners": ["Maxime Grébauval"],
+    "requirements": ["pyserial==3.1.1"]
+  }

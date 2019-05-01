@@ -12,6 +12,14 @@
       friendly_name: "Baie coulissante"
       device_class: door
       value_template: "{{ is_state('sensor.dining_room_window_opening_sensor_access_control', '22') }}"
+    bar_window_opening_sensor:
+      friendly_name: "Baie coulissante"
+      device_class: door
+      value_template: "{{ is_state('sensor.bar_window_opening_sensor_access_control', '22') }}"
+    kitchen_window_opening_sensor:
+      friendly_name: "Fenêtre"
+      device_class: window
+      value_template: "{{ is_state('sensor.kitchen_window_access_control', '22') }}"
     
     hall_door_sensor_burglar:
       friendly_name: "Arrachement"
@@ -29,4 +37,12 @@
       friendly_name: "Arrachement"
       device_class: safety
       value_template: "{{ is_state('sensor.cellar_motion_sensor_burglar', '3') }}"
+    bar_window_opening_sensor_burglar:
+      friendly_name: "Arrachement"
+      device_class: safety
+      value_template: "{{ is_state('sensor.bar_window_opening_sensor_burglar', '3') }}"
+    kitchen_window_opening_sensor_burglar:
+      friendly_name: "Arrachement"
+      device_class: safety
+      value_template: "{{ is_state('sensor.kitchen_window_burglar', '3') }}"
 

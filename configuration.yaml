@@ -2,7 +2,7 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Maison
   # Location required to calculate the time the sun rises and sets
-  latitude: 48.92741552651414 
+  latitude: 48.92741552651414
   longitude: 1.950246924213791
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 132
@@ -24,7 +24,7 @@ config:
 
 http:
   # Secrets are defined in the file secrets.yaml
-  api_password: !secret http_password
+  # api_password: !secret http_password
   # cors_allowed_origins:
   #   - http://192.168.1.1
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
@@ -66,9 +66,9 @@ sensor: !include sensor.yaml
 scene: !include scene.yaml
 
 # Text to speech
-tts:
-  - platform: google
-    language: 'fr'
+#tts:
+#  - platform: google
+#    language: 'fr'
 
 # Cloud
 # cloud: !include cloud.yaml
@@ -76,6 +76,7 @@ tts:
 # Z Wave
 zwave: !include zwave.yaml
 
+rfplayer:
 cover: !include cover.yaml
 
 # Homekit
@@ -104,7 +105,7 @@ lovelace:
   mode: storage
 
 # APPLE TV
-apple_tv: !include apple_tv.yaml
+# apple_tv: !include apple_tv.yaml
 
 input_boolean: !include input_boolean.yaml
 

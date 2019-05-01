@@ -1,4 +1,4 @@
-- platform: rfplayercover
+- platform: rfplayer
   port: /dev/ttyUSB0
   devices:
     - name: bar

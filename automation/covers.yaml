@@ -1,3 +1,47 @@
+- alias: Ouverture auto du store du salon
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: cover.open_cover
+    entity_id: cover.living_room
+  condition:
+  - condition: state
+    entity_id: binary_sensor.living_room_window_sensor
+    state: 'off'
+- alias: Ouverture auto du store de la salle à manger
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: cover.open_cover
+    entity_id: cover.dining_room
+  condition:
+  - condition: state
+    entity_id: binary_sensor.dining_room_window_opening_sensor
+    state: 'off'
+- alias: Ouverture auto du store dU bar
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: cover.open_cover
+    entity_id: cover.bar
+  condition:
+  - condition: state
+    entity_id: binary_sensor.bar_window_opening_sensor
+    state: 'off'
+- alias: Ouverture auto du store dU bar
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: cover.open_cover
+    entity_id: cover.kitchen
+  condition:
+  - condition: state
+    entity_id: binary_sensor.kitchen_window_opening_sensor
+    state: 'off'
 - alias: Fermeture auto des volets
   trigger:
     platform: sun
@@ -5,11 +49,3 @@
   action:
     service: cover.close_cover
     entity_id: group.covers
-
-- alias: Ouverture auto des volets
-  trigger:
-    platform: sun
-    event: sunrise
-  action:
-    service: cover.open_cover
-    entity_id: group.downstair_covers 

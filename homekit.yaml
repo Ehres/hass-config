@@ -30,6 +30,7 @@ filter:
     - cover.mezzanine
     - cover.bedroom
     - cover.louis_bedroom
+    - lock.enter
 entity_config:
   alarm_control_panel.house_alarm:
     name: Alarme
