@@ -1,79 +1,115 @@
 - id: 'square'
-  alias: Press square to open enter lock
+  alias: Press square to open enter lock (maxime)
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      node_id: 32
-      scene_id: 1
-      scene_data: 7680
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+          node_id: 32
+          scene_id: 1
+          scene_data: 7860
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+          node_id: 33
+          scene_id: 1
+          scene_data: 7860
   action:
     service: lock.unlock
     data:
       entity_id: lock.enter
 - id: 'circle'
-  alias: Press circle to close enter lock
+  alias: Press circle to close enter lock (maxime)
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      node_id: 32
-      scene_id: 2
-      scene_data: 7680
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 32
+        scene_id: 2
+        scene_data: 7860
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 33
+        scene_id: 2
+        scene_data: 7860
   action:
     service: lock.lock
     data:
       entity_id: lock.enter
 - id: 'x'
-  alias: Press x to arm alarm
+  alias: Press x to arm alarm (maxime)
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      node_id: 32
-      scene_id: 3
-      scene_data: 7680
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 32
+        scene_id: 3
+        scene_data: 7860
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 33
+        scene_id: 3
+        scene_data: 7860
   action:
     service: alarm_control_panel.alarm_arm_away
     data:
       entity_id: alarm_control_panel.house_alarm
       code: !secret house_alarm_code
 - id: 'triangle'
-  alias: Press triangle to disarm alarm
+  alias: Press triangle to disarm alarm (maxime)
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      node_id: 32
-      scene_id: 4
-      scene_data: 7680
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 32
+        scene_id: 4
+        scene_data: 7860
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 33
+        scene_id: 4
+        scene_data: 7860
   action:
     service: alarm_control_panel.alarm_disarm
     data:
       entity_id: alarm_control_panel.house_alarm
       code: !secret house_alarm_code
 - id: 'minus'
-  alias: Press minus to turn off all lights
+  alias: Press minus to turn off all lights (maxime)
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      node_id: 32
-      scene_id: 5
-      scene_data: 7680
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 32
+        scene_id: 5
+        scene_data: 7860
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 33
+        scene_id: 5
+        scene_data: 7860
   action:
-    service: light.turn_off
+    service: light.toggle
     data:
       entity_id: group.lights
 - id: 'plus'
-  alias: Press plus to close all covers
+  alias: Press plus to close all covers (maxime)
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      node_id: 32
-      scene_id: 6
-      scene_data: 7680
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 32
+        scene_id: 6
+        scene_data: 7860
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        node_id: 33
+        scene_id: 6
+        scene_data: 7860
   action:
     service: cover.close_cover
     data:
