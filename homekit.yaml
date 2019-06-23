@@ -14,6 +14,8 @@ filter:
     - light.floor_lamp
     - input_boolean.maxime_home_presence
     - input_boolean.fleur_home_presence
+    - input_boolean.auto_open_covers
+    - input_boolean.auto_close_covers
     - binary_sensor.hall_smoke_sensor
     - binary_sensor.upstair_smoke_sensor
     - sensor.hall_smoke_sensor_temperature

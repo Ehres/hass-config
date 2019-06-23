@@ -6,4 +6,11 @@ fleur_home_presence:
   name: Fleur est ?|  la maison
   initial: off
   icon: mdi:human-female
-
+auto_open_covers:
+  name: Ouverture automatique des stores
+  initial: on
+  icon: mdi:window-open
+auto_close_covers:
+  name: Fermeture automatique des stores
+  initial: on
+  icon: mdi:window-closed
