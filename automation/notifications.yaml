@@ -13,7 +13,7 @@
       entity_id: updater.updater
   action:
     service: notify.system_group
-    data_template: 
+    data_template:
       title: 'Mise a jours de Home Assistant'
       message: "La version {{ states.updater.updater.state }} de Home Assistant est disponible."
 
@@ -24,7 +24,7 @@
       from: 'off'
       to: 'on'
     - platform: state
-      entity_id: binary_sensor.upstair_smoke_sensor
+      entity_id: binary_sensor.mezzanine_smoke_sensor
       from: 'off'
       to: 'on'
   action:
