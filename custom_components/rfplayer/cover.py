@@ -29,11 +29,44 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
 
     # Assign configuration variables. The configuration check takes care they are
     # present.
-    port = config.get('port')
-    devices = config.get('devices')
+    # port = config.get('port')
+    port = '/dev/ttyUSB0'
+    # devices = config.get('entities')
+    devices = [
+        {
+            'name': 'bar',
+            'code': 'A1'
+        },
+        {
+            'name': 'dining_room',
+            'code': 'A2'
+        },
+        {
+            'name': 'living_room',
+            'code': 'A3'
+        },
+        {
+            'name': 'kitchen',
+            'invert': True,
+            'code': 'A4'
+        },
+        {
+            'name': 'bedroom',
+            'code': 'A5'
+        },
+        {
+            'name': 'mezzanine',
+            'code': 'A6'
+        },
+        {
+            'name': 'louis_bedroom',
+            'code': 'A7'
+        }
+    ]
 
     # Setup connection with rfplayer
     hub = serial.Serial(port, 115200)
+    print(hub)
 
     # Verify that passed in configuration works
     if not hub.is_open:

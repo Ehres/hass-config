@@ -33,6 +33,11 @@ filter:
     - cover.bedroom
     - cover.louis_bedroom
     - lock.enter
+    - binary_sensor.hall_door_sensor
+    - binary_sensor.living_room_window_sensor
+    - binary_sensor.dining_room_window_opening_sensor
+    - binary_sensor.bar_window_opening_sensor
+    - binary_sensor.kitchen_window_opening_sensor
 entity_config:
   alarm_control_panel.house_alarm:
     name: Alarme

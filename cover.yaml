@@ -1,6 +1,6 @@
 - platform: rfplayer
   port: /dev/ttyUSB0
-  devices:
+  entities:
     - name: bar
       code: A1
     - name: dining_room
