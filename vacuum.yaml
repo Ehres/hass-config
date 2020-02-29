@@ -1,0 +1,4 @@
+- platform: xiaomi_miio
+  host: 192.168.1.19
+  token: 4e6f386668773738554e6a716934524d
+  name: Robot aspirateur

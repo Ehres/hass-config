@@ -67,7 +67,7 @@ sun:
 sensor: !include sensor.yaml
 
 # Scenes
-scene: !include scene.yaml
+scene: !include scenes.yaml
 
 # Text to speech
 #tts:
@@ -116,3 +116,11 @@ input_boolean: !include input_boolean.yaml
 alarm_control_panel: !include alarm_control_panel.yaml
 
 binary_sensor: !include binary_sensor.yaml
+
+mobile_app:
+
+vacuum: !include vacuum.yaml
+    
+camera: !include camera.yaml
+
+stream:

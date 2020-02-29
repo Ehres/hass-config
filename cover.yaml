@@ -1,18 +1,18 @@
 - platform: rfplayer
   port: /dev/ttyUSB0
-  entities:
-    - name: bar
-      code: A1
-    - name: dining_room
-      code: A2
-    - name: living_room
-      code: A3
-    - name: kitchen
-      code: A4
-      invert: true
-    - name: bedroom
-      code: A5
-    - name: mezzanine
-      code: A6
-    - name: louis_bedroom
-      code: A7
+  #entities:
+  #  - name: bar
+  #    code: A1
+  #  - name: dining_room
+  #    code: A2
+  #  - name: living_room
+  #    code: A3
+  #  - name: kitchen
+  #    code: A4
+  #    invert: true
+  #  - name: bedroom
+  #    code: A5
+  #  - name: mezzanine
+  #    code: A6
+  #  - name: louis_bedroom
+  #    code: A7
