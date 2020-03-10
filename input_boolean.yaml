@@ -14,3 +14,7 @@ auto_close_covers:
   name: Fermeture automatique des stores
   initial: on
   icon: mdi:window-closed
+inside_camera_detection:
+  name: Détection intérieur
+  initial: off
+  icon: mdi:motion-sensor

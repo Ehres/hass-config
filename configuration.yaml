@@ -12,6 +12,8 @@ homeassistant:
   time_zone: Europe/Paris
   # Customization file
   customize: !include customize.yaml
+  
+  auth_providers: !include auth_providers.yaml
 
 # Show links to resources in log and frontend
 # introduction:
@@ -124,3 +126,5 @@ vacuum: !include vacuum.yaml
 camera: !include camera.yaml
 
 stream:
+
+rest_command: !include rest_command.yaml

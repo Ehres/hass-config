@@ -1,18 +1,7 @@
 - platform: yr
 
-#- platform: waze_travel_time
-#  origin: !include coordinates/home.yaml
-#  destination: !include coordinates/maxime.workplace.yaml
-#  region: 'EU'
-#  name: Mano Mano
-#  excl_filter: A14
-
-#- platform: waze_travel_time
-#  origin: !include coordinates/home.yaml
-#  destination: !include coordinates/fleur.workplace.yaml
-#  region: 'EU'
-#  name: Hopital Bichat
-#  excl_filter: A14
+# - platform: rest
+#   resource: http://IP_ADDRESS/ENDPOINT
 
 - platform: systemmonitor
   resources:

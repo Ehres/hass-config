@@ -1,0 +1,5 @@
+turn_on_synology_home_mode:
+  url: !secret ss_home_mode_on_url
+
+turn_off_synology_home_mode:
+  url: !secret ss_home_mode_off_url

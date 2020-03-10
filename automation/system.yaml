@@ -11,3 +11,13 @@
     - service: notify.system_group
       data:
         message: "Homekit demarre !"
+
+- alias: 'camera motion sensor'
+  trigger:
+    - platform: webhook
+      webhook_id: motion_sensor_inside
+  action:
+    - service: script.turn_on
+      entity_id: script.trigger_inside_camera_detection
+
+

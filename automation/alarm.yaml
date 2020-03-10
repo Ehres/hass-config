@@ -6,6 +6,8 @@
     - platform: state
       entity_id: group.opening_window_doors_burglar
       to: 'on'
+    - platform: state
+      entity_id: input_boolean.inside_camera_detection
   condition:
     - condition: state
       entity_id: alarm_control_panel.house_alarm
@@ -30,3 +32,19 @@
 
     - service: cover.open_cover
       entity_id: group.covers
+      
+- alias: Switch off Synology Surveillance Station HomeMode
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.house_alarm
+    to: 'armed_away'
+  action:
+    - service: rest_command.turn_off_synology_home_mode
+      
+- alias: Switch on Synology Surveillance Station HomeMode
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.house_alarm
+    to: 'disarmed'
+  action:
+    - service: rest_command.turn_on_synology_home_mode
