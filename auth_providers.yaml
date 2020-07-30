@@ -1,3 +1,0 @@
-- type: trusted_networks
-  trusted_networks:
-    - !secret akira_ip
