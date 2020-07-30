@@ -1,34 +1,86 @@
 flash_living_room:
   alias: Flash salon on
   sequence:
-    - alias: Lumière salon On
-      service: light.turn_on
-      data:
-        entity_id: group.lights
-    - delay: 00:00:01
-    - alias: Light Room1 Off
-      service: light.turn_off
-      data:
-        entity_id: group.lights
-    - alias: loop_room1
-      service: script.turn_on
-      data:
-        entity_id: script.flash_loop
-
+  - alias: Lumière salon On
+    service: light.turn_on
+    data:
+      entity_id: group.lights
+  - delay: 00:00:01
+  - alias: Light Room1 Off
+    service: light.turn_off
+    data:
+      entity_id: group.lights
+  - alias: loop_room1
+    service: script.turn_on
+    data:
+      entity_id: script.flash_loop
 flash_loop:
   alias: Flash loop
   sequence:
-    - delay: 00:00:01
-    - alias: loop_room1
-      service: script.turn_on
-      data:
-        entity_id: script.flash_living_room
+  - delay: 00:00:01
+  - alias: loop_room1
+    service: script.turn_on
+    data:
+      entity_id: script.flash_living_room
 
-trigger_inside_camera_detection:
-  alias: Trigger input boolean for motion from Synology API
+
+# CAMERA
+trigger_living_room_camera_detection:
+  alias: Trigger input boolean for living room motion detection
   sequence:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.inside_camera_detection
-    - delay: 00:00:05
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.inside_camera_detection
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.living_room_camera_detection
+  - delay: 00:00:05
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.living_room_camera_detection
+
+trigger_entrance_camera_detection:
+  alias: Trigger input boolean for entrance motion detection
+  sequence:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.entrance_camera_detection
+  - delay: 00:00:05
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.entrance_camera_detection
+
+trigger_terrasse_camera_detection:
+  alias: Trigger input boolean for terrasse motion detection
+  sequence:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.terrasse_camera_detection
+  - delay: 00:00:05
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.terrasse_camera_detection
+
+
+# R2D2
+start_r2d2:
+  alias: Passe l'aspirateur
+  sequence:
+  - data: {}
+    entity_id: vacuum.r2_d2
+    service: vacuum.start
+start_r2d2_dining_room:
+  alias: Passe l'aspirateur dans la salle à manger
+  sequence:
+  - data:
+      repeats: 1
+      zone:
+      - - 20220
+        - 25300
+        - 26000
+        - 28400
+    entity_id: vacuum.r2_d2
+    service: vacuum.clean_spot
+start_r2d2_living_room:
+  alias: Passe l'aspirateur dans le salon
+  sequence:
+  - data:
+      repeats: 1
+      zone:
+      - - 22400
+        - 28400
+        - 26000
+        - 32620
+    entity_id: vacuum.r2_d2
+    service: vacuum.clean_spot

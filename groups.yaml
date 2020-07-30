@@ -1,5 +1,4 @@
 lights:
-  view: no
   name: Lumières
   entities:
     - light.living_room_spots
@@ -15,7 +14,6 @@ lights:
     - light.floor_lamp
 
 covers:
-  view: no
   name: Volets
   entities:
     - cover.kitchen
@@ -27,7 +25,6 @@ covers:
     - cover.louis_bedroom
 
 downstair_covers:
-  view: no
   name: Volets du rez de chaussez
   entities:
     - cover.kitchen
@@ -36,7 +33,6 @@ downstair_covers:
     - cover.living_room
 
 upstair_covers:
-  view: no
   name: Volets de l'etage
   entities:
     - cover.bedroom
@@ -44,7 +40,6 @@ upstair_covers:
     - cover.louis_bedroom
 
 opening_window_doors_sensors:
-  view: no
   name: Détecteurs d'ouverture
   entities:
     - binary_sensor.hall_door_sensor
@@ -54,7 +49,6 @@ opening_window_doors_sensors:
     - binary_sensor.kitchen_window_opening_sensor
 
 opening_window_doors_burglar:
-  view: no
   name: Arrachement
   entities:
     - binary_sensor.hall_door_sensor_burglar

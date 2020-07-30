@@ -1,4 +1,4 @@
-- platform: synology
-  url: !secret akira_ip_with_port
-  username: !secret akira_user
-  password: !secret akira_password
+- platform: uvc
+  nvr: 192.168.1.38
+  key: !secret unifi-video-key
+  password: !secret unifi-video-camera-password

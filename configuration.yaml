@@ -13,7 +13,7 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
   
-  auth_providers: !include auth_providers.yaml
+  # auth_providers: !include auth_providers.yaml
 
 # Show links to resources in log and frontend
 # introduction:
@@ -115,6 +115,8 @@ lovelace:
 
 input_boolean: !include input_boolean.yaml
 
+# input_text: !include input_text.yaml
+
 alarm_control_panel: !include alarm_control_panel.yaml
 
 binary_sensor: !include binary_sensor.yaml
@@ -127,4 +129,7 @@ camera: !include camera.yaml
 
 stream:
 
-rest_command: !include rest_command.yaml
+speedtestdotnet:
+  scan_interval:
+    minutes: 30
+  server_id: 24130
