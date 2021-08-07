@@ -1,4 +1,4 @@
-- alias: Trigger alarm while armed away
+- alias: Déclanche l'alarme par les capteurs
   trigger:
     - platform: state
       entity_id: group.opening_window_doors_sensors
@@ -15,8 +15,24 @@
   action:
     service: alarm_control_panel.alarm_trigger
     entity_id: alarm_control_panel.house_alarm
+    
+- alias: Déclanche l'alarme par le détection de mouvement de la caméra de la salle à manger
+  trigger:
+    - platform: state
+      entity_id: input_boolean.living_room_camera_detection
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house_alarm
+      state: armed_away
+    - condition: state
+      entity_id: input_boolean.enable_dining_room_camera_motion_for_alarm
+      state: 'on'
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.house_alarm
 
-- alias: Send notification when alarm triggered
+- alias: Envoi une notification quand l'alarme de déclanche
   trigger:
     platform: state
     entity_id: alarm_control_panel.house_alarm
@@ -32,19 +48,3 @@
 
     - service: cover.open_cover
       entity_id: group.covers
-      
-- alias: Switch off Synology Surveillance Station HomeMode
-  trigger:
-    platform: state
-    entity_id: alarm_control_panel.house_alarm
-    to: 'armed_away'
-  action:
-    - service: rest_command.turn_off_synology_home_mode
-      
-- alias: Switch on Synology Surveillance Station HomeMode
-  trigger:
-    platform: state
-    entity_id: alarm_control_panel.house_alarm
-    to: 'disarmed'
-  action:
-    - service: rest_command.turn_on_synology_home_mode
