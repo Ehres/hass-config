@@ -1,3 +1,5 @@
 device_tracker.iphone_de_maxime:
   friendly_name: iPhone de Maxime
   entity_picture: ./pictures/maxime.jpg
+binary_sensor.hall_smoke_sensor:
+  device_class: smoke

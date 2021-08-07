@@ -61,6 +61,11 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
         {
             'name': 'louis_bedroom',
             'code': 'A7'
+        },
+        {
+            'name': 'friends_bedroom',
+            'invert': True,
+            'code': 'A8'
         }
     ]
 

@@ -1,89 +1,90 @@
-auto_start: False
-filter:
-  include_entities:
+# auto_start: False
+# filter:
+#   include_entities:
     # LIGHTS
-    - light.cellar
-    - light.kitchen
-    - light.dining_room
-    - light.living_room_spots
-    - light.stairs
-    - light.hall
-    - light.bedroom
-    - light.bar
-    - light.louis_bedroom
-    - light.mezzanine
-    - light.floor_lamp
-    - light.friends_bedroom
+    # - light.cellar
+    # - light.kitchen
+    # - light.dining_room
+    # - light.living_room_spots
+    # - light.stairs
+    # - light.hall
+    # - light.bedroom
+    # - light.bar
+    # - light.louis_bedroom
+    # - light.mezzanine
+    # - light.floor_lamp
+    # - light.friends_bedroom
     
-    # TOGGLES
-    - input_boolean.maxime_home_presence
-    - input_boolean.fleur_home_presence
-    - input_boolean.auto_open_covers
-    - input_boolean.auto_close_covers
-    - lock.enter
+    # # TOGGLES
+    # - input_boolean.maxime_home_presence
+    # - input_boolean.fleur_home_presence
+    # - input_boolean.auto_open_covers
+    # - input_boolean.auto_close_covers
+    # - lock.enter
     
-    # SENSORS
-    - binary_sensor.hall_smoke_sensor
-    - binary_sensor.upstair_smoke_sensor
-    - sensor.hall_smoke_sensor_temperature
-    - sensor.upstair_smoke_sensor_temperature
-    - sensor.cellar_motion_sensor_temperature
-    - sensor.cellar_motion_sensor_luminance
-    - binary_sensor.hall_door_sensor
-    - binary_sensor.living_room_window_sensor
-    - binary_sensor.dining_room_window_opening_sensor
-    - binary_sensor.bar_window_opening_sensor
-    - binary_sensor.kitchen_window_opening_sensor
+    # # SENSORS
+    # - binary_sensor.hall_smoke_sensor
+    # - binary_sensor.upstair_smoke_sensor
+    # - sensor.hall_smoke_sensor_temperature
+    # - sensor.upstair_smoke_sensor_temperature
+    # - sensor.cellar_motion_sensor_temperature
+    # - sensor.cellar_motion_sensor_luminance
+    # - binary_sensor.hall_door_sensor
+    # - binary_sensor.living_room_window_sensor
+    # - binary_sensor.dining_room_window_opening_sensor
+    # - binary_sensor.bar_window_opening_sensor
+    # - binary_sensor.kitchen_window_opening_sensor
+    # - binary_sensor.doorbell_sonnette
     
-    # SCENES
-    - scene.film
-    - scene.on_mange
+    # # SCENES
+    # - scene.film
+    # - scene.on_mange
     
-    # ALARM
-    - alarm_control_panel.house_alarm
+    # # ALARM
+    # - alarm_control_panel.house_alarm
     
-    # COVERS
-    - cover.kitchen
-    - cover.bar
-    - cover.dining_room
-    - cover.living_room
-    - cover.mezzanine
-    - cover.bedroom
-    - cover.louis_bedroom
+    # # COVERS
+    # - cover.kitchen
+    # - cover.bar
+    # - cover.dining_room
+    # - cover.living_room
+    # - cover.mezzanine
+    # - cover.bedroom
+    # - cover.louis_bedroom
+    # - cover.friends_bedroom
     
-    # SCRIPTS
-    - script.start_r2d2
-    - script.start_r2d2_living_room
-    - script.start_r2d2_dining_room
+    # # SCRIPTS
+    # - script.start_r2d2
+    # - script.clean_r2d2
 
     # CAMERA
-    - camera.entree
-    - camera.salon
-    - camera.terrasse
+    # - camera.entree
+    # - camera.salon_salle_a_manger
+    # - camera.terrasse
+    # - camera.sonnette
 
 entity_config:
   alarm_control_panel.house_alarm:
     name: Alarme
     code: !secret house_alarm_code
   
-  camera.terrasse:
-    stream_source: !secret camera_terasse_streaming_source
-    support_audio: true
-    video_codec: copy
-    audio_codec: copy
-
-  camera.salon:
-    stream_source: !secret camera_salon_streaming_source
-    support_audio: true
-    video_codec: copy
-    audio_codec: copy
-
-  camera.entree:
-    stream_source: !secret camera_entree_streaming_source
-    support_audio: true
-    video_codec: copy
-    audio_codec: copy
-    
-    
+#   camera.sonnette:
+#     linked_doorbell_sensor: binary_sensor.doorbell_sonnette
+#     stream_source: rtsps://192.168.1.32:7441/CHvMqNUDYS3bTCJP?enableSrtp
+#     support_audio: true
+#     video_codec: copy
   
+#   camera.terrasse:
+#     stream_source: rtsps://192.168.1.32:7441/tMKRhY7e16GipJXJ?enableSrtp
+#     support_audio: true
+#     video_codec: copy
 
+#   camera.salon:
+#     stream_source: rtsps://192.168.1.32:7441/6Kid8pz32CZ220BI?enableSrtp
+#     support_audio: true
+#     video_codec: h264_omx
+
+#   camera.entree:
+#     stream_source: rtsps://192.168.1.32:7441/FCNSDQjzPkE7plRw?enableSrtp
+#     support_audio: true
+#     video_codec: copy

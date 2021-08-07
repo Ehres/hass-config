@@ -80,7 +80,7 @@ scene: !include scenes.yaml
 # cloud: !include cloud.yaml
 
 # Z Wave
-zwave: !include zwave.yaml
+# zwave: !include zwave.yaml
 
 rfplayer:
 cover: !include cover.yaml
@@ -92,7 +92,8 @@ homekit: !include homekit.yaml
 group: !include groups.yaml
 
 # Automation
-automation: !include_dir_merge_list automation/
+# automation: !include_dir_merge_list automation/
+automation: !include automations.yaml
 
 # Script
 script: !include scripts.yaml

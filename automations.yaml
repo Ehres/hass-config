@@ -1,0 +1,142 @@
+- id: '1623185040824'
+  alias: Allumage par detection du cellier
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.cellar_motion_sensor
+      light_target:
+        area_id: 752ed33807e811eba09c29330f58587f
+      no_motion_wait: 30
+- id: '1623188516423'
+  alias: Ouverture automatique des stores du bar
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition:
+  - type: is_not_open
+    condition: device
+    device_id: 80bcae45f1249cd6353d99013ff717f0
+    entity_id: binary_sensor.bar_window_opening_sensor_access_control_window_door_is_open
+    domain: binary_sensor
+  - condition: state
+    entity_id: input_boolean.auto_open_covers
+    state: 'on'
+  action:
+  - service: cover.open_cover
+    target:
+      entity_id: cover.bar
+  mode: single
+- id: '1623188643302'
+  alias: Ouverture automatique des stores de la salle a manger
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition:
+  - type: is_not_open
+    condition: device
+    device_id: c646b5001fc425d705b616e075fc103f
+    entity_id: binary_sensor.dining_room_window_opening_sensor_access_control_window_door_is_open_3
+    domain: binary_sensor
+  - condition: state
+    entity_id: input_boolean.auto_open_covers
+    state: 'on'
+  action:
+  - service: cover.open_cover
+    target:
+      entity_id: cover.dining_room
+  mode: single
+- id: '1623188948529'
+  alias: Ouverture automatique des stores du salon
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition:
+  - type: is_not_open
+    condition: device
+    device_id: 4e3d9a779f1fc9905c683e3e60d86631
+    entity_id: binary_sensor.living_room_window_opening_sensor_access_control_window_door_is_open_2
+    domain: binary_sensor
+  - condition: state
+    entity_id: input_boolean.auto_open_covers
+    state: 'on'
+  action:
+  - service: cover.open_cover
+    target:
+      entity_id: cover.living_room
+  mode: single
+- id: '1623189011695'
+  alias: Ouverture automatique des stores de la chambre d'ami
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition:
+  - condition: state
+    entity_id: input_boolean.auto_open_covers
+    state: 'on'
+  action:
+  - service: cover.open_cover
+    target:
+      entity_id: cover.friends_bedroom
+  mode: single
+- id: '1623189237566'
+  alias: Fermeture automatique des stores
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+  condition:
+  - condition: state
+    entity_id: input_boolean.auto_close_covers
+    state: 'on'
+  action:
+  - service: cover.close_cover
+    target:
+      entity_id:
+      - cover.bar
+      - cover.bedroom
+      - cover.dining_room
+      - cover.friends_bedroom
+      - cover.kitchen
+      - cover.living_room
+      - cover.living_room
+      - cover.mezzanine
+  mode: single
+- id: '1623239689539'
+  alias: Déclanche l'alarme par les capteurs
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 80bcae45f1249cd6353d99013ff717f0
+    entity_id: binary_sensor.bar_window_opening_sensor_access_control_window_door_is_open
+    domain: binary_sensor
+  - type: opened
+    platform: device
+    device_id: c646b5001fc425d705b616e075fc103f
+    entity_id: binary_sensor.dining_room_window_opening_sensor_access_control_window_door_is_open_3
+    domain: binary_sensor
+  - type: opened
+    platform: device
+    device_id: 4e3d9a779f1fc9905c683e3e60d86631
+    entity_id: binary_sensor.living_room_window_opening_sensor_access_control_window_door_is_open_2
+    domain: binary_sensor
+  - type: opened
+    platform: device
+    device_id: 4badfd9d69ba69579196da54a6bd8d81
+    entity_id: binary_sensor.kitchen_window_opening_sensor_access_control_window_door_is_open
+    domain: binary_sensor
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.house_alarm
+    state: armed_away
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    target:
+      entity_id: alarm_control_panel.house_alarm
+    data: {}
+  mode: restart

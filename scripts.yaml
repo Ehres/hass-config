@@ -60,27 +60,12 @@ start_r2d2:
   - data: {}
     entity_id: vacuum.r2_d2
     service: vacuum.start
-start_r2d2_dining_room:
-  alias: Passe l'aspirateur dans la salle à manger
+clean_r2d2:
+  alias: Nettoyage R2D2
   sequence:
   - data:
-      repeats: 1
-      zone:
-      - - 20220
-        - 25300
-        - 26000
-        - 28400
+      x_coord: 19000
+      y_coord: 26000
     entity_id: vacuum.r2_d2
-    service: vacuum.clean_spot
-start_r2d2_living_room:
-  alias: Passe l'aspirateur dans le salon
-  sequence:
-  - data:
-      repeats: 1
-      zone:
-      - - 22400
-        - 28400
-        - 26000
-        - 32620
-    entity_id: vacuum.r2_d2
-    service: vacuum.clean_spot
+    service: xiaomi_miio.vacuum_goto
+

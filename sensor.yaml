@@ -1,5 +1,3 @@
-- platform: yr
-
 - platform: bbox
   name: Bbox
   monitored_variables:

@@ -1,11 +1,3 @@
-maxime_home_presence:
-  name: Maxime est ?|  la maison
-  initial: off
-  icon: mdi:human-male
-fleur_home_presence:
-  name: Fleur est ?|  la maison
-  initial: off
-  icon: mdi:human-female
 auto_open_covers:
   name: Ouverture automatique des stores
   initial: on
@@ -14,19 +6,3 @@ auto_close_covers:
   name: Fermeture automatique des stores
   initial: on
   icon: mdi:window-closed
-living_room_camera_detection:
-  name: Détection salon
-  initial: off
-  icon: mdi:motion-sensor
-entrance_camera_detection:
-  name: Détection entrée
-  initial: off
-  icon: mdi:motion-sensor
-terrasse_camera_detection:
-  name: Détection terrasse
-  initial: off
-  icon: mdi:motion-sensor
-enable_dining_room_camera_motion_for_alarm:
- name: Détection de la caméra de la salle à manger pour l'alarme
- initial: on
- icon: mdi:cctv

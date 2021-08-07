@@ -23,6 +23,7 @@ covers:
     - cover.mezzanine
     - cover.bedroom
     - cover.louis_bedroom
+    - cover.friends_bedroom
 
 downstair_covers:
   name: Volets du rez de chaussez
